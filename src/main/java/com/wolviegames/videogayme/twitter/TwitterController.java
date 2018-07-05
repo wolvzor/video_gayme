@@ -1,5 +1,6 @@
 package com.wolviegames.videogayme.twitter;
 
+import com.wolviegames.videogayme.gayme.GaymeFabricator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.twitter.api.Twitter;
 import org.springframework.stereotype.Controller;
@@ -16,11 +17,14 @@ public class TwitterController {
     @Autowired
     private TwitterTemplateCreator twitterTemplateCreator;
 
+    @Autowired
+    private GaymeFabricator gaymeFabricator;
+
     @RequestMapping(method = RequestMethod.GET)
     public String tweet(Model model) {
         Twitter twitterTemplate = twitterTemplateCreator.getTwitterTemplate();
-        twitterService.tweet(twitterTemplate, "It's like hello world, but with video games, a Hayley Kiyoko " +
-                "soundtrack, and figuring out who pays at dates.");
+        String tweet = gaymeFabricator.fabricateTweet();
+        twitterService.tweet(twitterTemplate, tweet);
         return "tweet";
     }
 
