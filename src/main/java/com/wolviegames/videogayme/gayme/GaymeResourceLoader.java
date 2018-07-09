@@ -12,11 +12,8 @@ public class GaymeResourceLoader {
     @Value("#{'${gayme.videogames}'.split(',')}")
     List<String> videoGames;
 
-    @Value("#{'${gayme.actors}'.split(',')}")
-    List<String> actors;
-
-    @Value("#{'${gayme.characters}'.split(',')}")
-    List<String> characters;
+    @Value("#{'${gayme.people}'.split(',')}")
+    List<String> people;
 
     @Value("#{'${gayme.gaythings}'.split(',')}")
     List<String> gayThings;

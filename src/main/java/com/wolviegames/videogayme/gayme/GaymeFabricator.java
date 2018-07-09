@@ -15,10 +15,10 @@ public class GaymeFabricator {
     public String fabricateTweet() {
         Random rand = new Random();
         String videoGame = resourceLoader.videoGames.get(rand.nextInt(resourceLoader.videoGames.size()));
-        String actor = resourceLoader.actors.get(rand.nextInt(resourceLoader.actors.size()));
+        String people = resourceLoader.people.get(rand.nextInt(resourceLoader.people.size()));
         String gayThing = resourceLoader.gayThings.get(rand.nextInt(resourceLoader.gayThings.size()));
 
-        return "It's like " + videoGame + ", but with " + actor + " and " + gayThing;
+        return "It's like " + videoGame + ", but with " + people + " and " + gayThing;
     }
 
 }
